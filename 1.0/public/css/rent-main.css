@@ -1,0 +1,51 @@
+.cell-size{
+    /*width:150px;*/
+
+}
+
+
+.cell-size:hover{
+    /*background-color: #3097d1!important;*/
+}
+
+.cell-item{
+    display: inline-block;
+    width:100%;
+}
+.padding-sp{
+    font-weight: 700;
+    margin-right: 20px;
+}
+h4{
+color: #166327;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+table .btn-default{
+    border-color: #fff!important;
+}
+
+.btn-default:focus{
+    background-color: #2a88bd!important;
+    color:white;
+}
+
+.btn-green:focus{
+    background-color: #6c9e07!important;
+    color:white;
+}
+
+.member_checkbox_label{
+    display: none;
+}
+
+.mr-top{
+    width: 100%;
+}
+
+caption{
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}

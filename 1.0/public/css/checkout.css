@@ -1,0 +1,356 @@
+* {
+
+    font-variant: normal;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    /*background: #424770;*/
+    /*background: #8efff7;*/
+    align-items: center;
+    min-height: 100%;
+}
+
+form {
+    width: 480px;
+    margin: 20px auto;
+}
+
+label {
+    height: 35px;
+    position: relative;
+    color: #8798AB;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+label > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 300;
+    line-height: 32px;
+    color: #8798AB;
+    border-bottom: 1px solid #586A82;
+    transition: border-bottom-color 200ms ease-in-out;
+    cursor: text;
+    pointer-events: none;
+}
+
+label > span span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0% 50%;
+    transition: transform 200ms ease-in-out;
+    cursor: text;
+}
+
+label .field.is-focused + span span,
+label .field:not(.is-empty) + span span {
+    transform: scale(0.68) translateY(-36px);
+    cursor: default;
+}
+
+label .field.is-focused + span {
+    border-bottom-color: #34D08C;
+}
+
+.field {
+    background: transparent;
+    font-weight: 300;
+    border: 0;
+    /*color: white;*/
+    color: #8798AB;
+    outline: none;
+    cursor: text;
+    display: block;
+    width: 100%;
+    line-height: 32px;
+    padding-bottom: 3px;
+    transition: opacity 200ms ease-in-out;
+}
+
+.field::-webkit-input-placeholder { color: #8898AA;}
+.field::-moz-placeholder { color: #8898AA;}
+
+/* IE doesn't show placeholders when empty+focused */
+.field:-ms-input-placeholder { color: #424770; }
+
+.field.is-empty:not(.is-focused) {
+    opacity: 0;
+}
+
+button {
+    float: left;
+    display: block;
+    background: #34D08C;
+    color: white;
+    border-radius: 2px;
+    border: 0;
+    margin-top: 20px;
+    font-size: 19px;
+    font-weight: 400;
+    width: 100%;
+    height: 47px;
+    line-height: 45px;
+    outline: none;
+}
+
+button:focus {
+    background: #24B47E;
+}
+
+button:active {
+    background: #159570;
+}
+
+.outcome {
+    float: left;
+    width: 100%;
+    padding-top: 8px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.success, .error {
+    /*display: none;*/
+    font-size: 15px;
+}
+
+.success.visible, .error.visible {
+    display: inline;
+}
+
+.error {
+    color: #E4584C;
+}
+
+.success {
+    color: #34D08C;
+}
+
+.success .token {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+footer{display:none}
+
+
+/*credit card*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800);
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: #262626;
+    background: radial-gradient(circle at top center, #62bb8e, #0f3321);
+    overflow-x: hidden;
+}
+
+.wrap {
+    max-width: 710px;
+    width:505px;
+    min-width: 380px;
+    margin: 0 auto;
+    padding: 80px 10px;
+    transform-style: preserve-3d;
+}
+
+.cc_images {
+    z-index: 0;
+}
+.cc_images .card {
+    float: left;
+    width: 16.666%;
+    height: 40px;
+    padding-left: 3px;
+    position: relative;
+    text-align: center;
+    perspective: 500px;
+    transform-style: preserve-3d;
+    z-index: 50;
+    transition: .4s;
+}
+.cc_images .card.show_cvc .inside {
+    transform: rotateY(180deg);
+}
+.cc_images .card.show_card {
+    transform: translateY(-20px);
+}
+.cc_images .card.show_card .front img, .cc_images .card.show_card .back img {
+    opacity: 1;
+    -webkit-filter: grayscale(0);
+    filter: none;
+}
+.cc_images .card .inside {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform-style: preserve-3d;
+    transition: .4s ease-in-out;
+}
+.cc_images .card .front, .cc_images .card .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.cc_images .card .front img, .cc_images .card .back img {
+    max-width: 100%;
+    display: block;
+    transition: .3s;
+    opacity: .1;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    /* Firefox 10+, Firefox on Android */
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.cc_images .card .back {
+    transform: rotateY(-180deg);
+}
+
+.input-wrap {
+    position: relative;
+
+}
+.input-wrap:after {
+    position: absolute;
+    font-family: "FontAwesome";
+    transition: .5s;
+    opacity: 0;
+}
+.input-wrap.valid:after {
+    content: "\f00c";
+    color: #03B410;
+    right: 10px;
+    top: 3px;
+    font-size: 22px;
+    opacity: 1;
+}
+.input-wrap.error:after {
+    content: "\f00d";
+    font-size: 20px;
+    color: #E43737;
+    right: 12px;
+    top: 3px;
+    opacity: 1;
+}
+
+#cc_number {
+    margin-bottom: 10px;
+}
+
+.expiration-wrap {
+    width: 50%;
+    margin-right: 2%;
+    float: left;
+}
+#expiration-wrap3{
+width: 48%!important;
+    margin-bottom: 10px;
+margin-right: 0!important;}
+
+.cvc-wrap {
+    width: 48%;
+    float: right;
+}
+
+label {
+    position: absolute;
+    background: #2c2c2c;
+    background-image: linear-gradient(to bottom, #434343, #222);
+    border: 1px solid #222;
+    color: white;
+    height: 40px;
+    width: 60px;
+    font-size: 20px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    padding-top: 5px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -3px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+input {
+    z-index: 10;
+    border: 0;
+    height: 40px;
+    font-size:17px!important;
+    padding: 0 5px;
+    padding-left: 70px;
+    width: 100%;
+    border: 1px solid black;
+}
+input:focus {
+    outline: none;
+}
+
+.info {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #bbb;
+    text-align: center;
+    margin-top: 20px;
+}
+.info small {
+    display: block;
+    font-size: .85em;
+}
+.info a {
+    color: skyblue;
+    text-decoration: none;
+}
+.info a:hover {
+    color: white;
+}
+label{
+    margin-top: 0!important;
+}
+
+#pageloader
+{
+    background: rgba( 255, 255, 255, 0.8 );
+    display: none;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+
+#pageloader img
+{
+    left: 50%;
+    margin-left: -32px;
+    margin-top: -32px;
+    position: absolute;
+    top: 50%;
+}

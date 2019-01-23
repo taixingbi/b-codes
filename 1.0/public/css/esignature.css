@@ -1,0 +1,24 @@
+.wrapper {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    margin: 0 auto;
+    user-select: none;
+}
+
+.signature-pad {
+    position: absolute;
+    left: 0;
+    margin-bottom: 20px;
+    top: 0;
+    width:800px;
+    height:300px;
+}
+.signature-pad img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
